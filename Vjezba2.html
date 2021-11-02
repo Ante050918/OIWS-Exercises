@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Laboratorijska vježba 4</title>
+<meta charset="UTF-8">
+<style>
+body {
+	font-family:"italic";
+	line-height:2;
+	}
+
+legend {
+	background-color: red;
+	color: white;
+	padding: 10px 20px;
+	}
+fieldset {
+	border: 1px solid rgb(50,120,240);
+	margin:10px;
+	}
+input:focus, textarea:focus{
+	background-color: rgb(250, 184, 164);
+	}
+[type="button"], [type="submit"], [type="reset"] {
+	background-color: rgb(255, 0, 0);
+	color:#000;
+	border: 1px solid black;
+	padding:5px;
+	}
+	
+	
+	
+#tablica{
+	width:100%;
+	}
+#tablica caption{
+	color:black;
+	font-variant:inherit;
+	font-weight:bold;
+	font-size:2.5em;
+	}
+#tablica th {
+	background-color: red;
+	color:white;
+	}
+
+#tablica, th, td{
+	border:1px solid black;
+	border-spacing: 6px;
+	border-collapse:collapse;
+	text-align:center;
+	}
+#tablica th, td {
+	padding: 5px;
+	}
+</style>
+</head>
+<body>
+<form name="forma">
+	<datalist id="drzaveList">
+		<option label="Hrvatska">Hrvatska</option>
+		<option label="Srbija">Srbija</option>
+		<option label="Slovenija">Slovenija</option>
+		<option label="Bosna i Hercegovina">Bosna i Hercegovina</option>
+		<option label="Mađarska">Mađarska</option>
+		<option label="Crna Gora">Crna Gora</option>
+	</datalist>
+<fieldset>
+	<legend>Vaša prva registracija</legend>
+<fieldset>
+    <legend>Korisnički podaci</legend>
+ Korisničko ime: <input type="text" name="korisnickoIme"placeholder="Upišite korisničko ime" required/><br/>
+ Lozinka:<input type="password" name="lozinka"placeholder="Upišite lozinku" required/><br/>
+ Lozinka:<input type="password" name="lozinka2" placeholder="Potvrdite lozinku" required/>
+</fieldset>
+<fieldset>
+<legend>Osobni podaci</legend>
+Ime:<input type="text" name="Ime" placeholder="Upišite svoje ime"/></br>
+Prezime:<input type="text" name="Prezime" placeholder="Upišite svoje prezime"/></br>
+Adresa:<textarea name="adresa" cols="42" rows="2" placeholder="Upišite svoju adresu"></textarea></br>
+Grad:<input type="text" name="grad" placeholder="Upišite grad"/></br>
+Poštanski broj:<input type="text" name="postanskibroj" placeholder="Upišite poštanski broj" min="10000" max="60000"/></br>
+Država:<input type="text" name="drzava" placeholder="Upišite državu" list="drzaveList"/></br>
+Broj telefona:<input type="tel" name="telefon" placeholder="Upišite broj telefona"/></br>
+Email:<input type="email" name="email" placeholder="Upišite e-mail adresu"/></br>
+Web stranica:<input type="url" name="web stranica" placeholder="Upišite web stranicu"/></br>
+Datum rođenja:<input type="datetime-local" name="datumrodenja" placeholder="Upišite datum rođenja"/></br>
+Dobna skupina:<select name="Dobnaskupina">
+			  <option value="<18">manje od 18 godina</option>
+			  <option value="<18-26">između 18 i 26 godina</option>
+			  <option value="<27-36" selected disabled>između 27 i 36 godina</option>
+			  <option value="<37-50">između 37 i 50 godina</option>
+			  <option value="<51-65" selected disabled>između 51 i 65 godina</option>
+			  <option value="<60+">iznad 60 godina</option>
+			  </select>			
+</fieldset>
+<fieldset>
+<legend>Obavijesti i zanimanja</legend>
+Da li želite da vas obaještavamo o nadolazećim popustima?
+<input type="radio" name="obavijest" value="da"/>Da
+<input type="radio" name="obavijest" value="ne"/>Ne</br>
+Odaberite način kontakta:
+<input type="checkbox" name="kontakt" value="Email"/>Email
+<input type="checkbox" name="kontakt" value="Telefon"/>Telefon
+<input type="checkbox" name="kontakt" value="Pošta"/>Pošta</br>
+Odaberite područje zanimanja koje vam se najviše sviđa:
+	<select name="podrucja" multiple="multiple" size="5"/></br>
+	 <optgroup label="Računarstvo">
+		<option value="Programiranje">Programiranje</option>
+		<option value="web">Web stranice</option>
+		<option value="ostalo">Ostalo</option>
+	 </optgroup>
+	 <optgroup label="Ekonomija">
+	  <option value="financije">Financije</option>
+	  <option value="marketing" selected disabled>Marketing</option>
+	  <option value="turizam">Turizam</option>
+	 </optgroup>
+	 <optgroup label="Jezici">
+	  <option value="Engleski">Engleski</option>
+	  <option value="Njemački">Njemački</option>
+	  <option value="Hrvatski" selected disabled>Hrvatski</option>
+	 </optgroup>
+	 </select>
+	 </fieldset></br>
+	 Spam provjera: koje je boje zemlja (odaberite boju)?
+	  <input type="color" name="boja" placeholder="Odaberite boju"/></br>
+	  <input type="submit" value="Pošalji"/>
+	 </fieldset>
+	 </form>
+	 <table id="tablica">
+		<caption> Vaša prva registracija</caption>
+			<tr>
+				<th><legend>Korisnički podaci</legend></th>
+				<th><legend>Osobni podaci</legend></th>
+				<th><legend>Obavijesti i zanimanja</legend></th>
+			</tr>
+			
+			<tr>
+				<td>Korisničko ime: <input type="text" name="korisnickoIme"placeholder="Upišite korisničko ime" required/></td>
+				<td>Ime:<input type="text" name="Ime" placeholder="Upišite svoje ime"/></td>
+				<td><input type="radio" name="obavijest" value="da"/>Da
+					<input type="radio" name="obavijest" value="ne"/>Ne</td>
+			</tr>
+			
+			<tr>
+				<td>Lozinka:<input type="password" name="lozinka"placeholder="Upišite lozinku" required/></td>
+				<td>Prezime:<input type="text" name="Prezime" placeholder="Upišite svoje prezime"/></td>
+				<td><input type="checkbox" name="kontakt" value="Email"/>Email
+					<input type="checkbox" name="kontakt" value="Telefon"/>Telefon
+					<input type="checkbox" name="kontakt" value="Pošta"/>Pošta</td>
+			</tr>
+			
+			<tr>
+				<td>Lozinka:<input type="password" name="lozinka2" placeholder="Potvrdite lozinku" required/></td>
+				<td>Adresa:<textarea name="adresa" cols="42" rows="2" placeholder="Upišite svoju adresu"></textarea></td>
+				<td><optgroup label="Računarstvo">
+				<option value="Programiranje">Programiranje</option>
+				<option value="web">Web stranice</option>
+				<option value="ostalo">Ostalo</option>
+				</optgroup></td>
+			</tr>
+			
+			<tr>
+				<td>/</td>
+				<td>Grad:<input type="text" name="grad" placeholder="Upišite grad"/></td>
+				<td><optgroup label="Ekonomija">
+				<option value="financije">Financije</option>
+				<option value="marketing" selected disabled>Marketing</option>
+				<option value="turizam">Turizam</option>
+				</optgroup></td>
+			</tr>
+			
+			<tr>
+				<td>/</td>
+				<td>Poštanski broj:<input type="text" name="postanskibroj" placeholder="Upišite poštanski broj" min="10000" max="60000"/></td>
+				<td><optgroup label="Jezici">
+				<option value="Engleski">Engleski</option>
+				<option value="Njemački">Njemački</option>
+				<option value="Hrvatski" selected disabled>Hrvatski</option>
+				</optgroup></td>
+			</tr>
+			
+			<tr>
+				<td>/</td>
+				<td>Država:<input type="text" name="drzava" placeholder="Upišite državu" list="drzaveList"/></td>
+				<td>/</td>
+			</tr>
+			
+			<tr>
+				<td>/</td>
+				<td>Broj telefona:<input type="tel" name="telefon" placeholder="Upišite broj telefona"/></td>
+				<td>/</td>
+			</tr>
+			
+			<tr>
+				<td>/</td>
+				<td>Email:<input type="email" name="email" placeholder="Upišite e-mail adresu"/></td>
+				<td>/</td>
+			</tr>
+			
+			<tr>
+				<td>/</td>
+				<td>Web stranica:<input type="url" name="web stranica" placeholder="Upišite web stranicu"/></td>
+				<td>/</td>
+			</tr>
+			
+			<tr>
+				<td>/</td>
+				<td>Datum rođenja:<input type="datetime-local" name="datumrodenja" placeholder="Upišite datum rođenja"/></br></td>
+				<td>/</td>
+			</tr>
+			<tr>
+				<td>/</td>
+				<td>Dobna skupina:<select name="Dobnaskupina">
+				 <option value="<18">manje od 18 godina</option>
+				<option value="<18-26">između 18 i 26 godina</option>
+				<option value="<27-36" selected disabled>između 27 i 36 godina</option>
+				<option value="<37-50">između 37 i 50 godina</option>
+				<option value="<51-65" selected disabled>između 51 i 65 godina</option>
+				<option value="<60+">iznad 60 godina</option>
+				</select></td>
+				<td>/</td>
+			</tr>
+	 </table>
+	 </body>
+	 </html>
+	 
+	
